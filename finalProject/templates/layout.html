@@ -1,0 +1,18 @@
+<!doctype html>
+
+<title>Corrected Your Sentences</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+    <h1 align="center"><font size="6" color="red">Input Yout Sentences</font></h1>
+    
+    <form action="{{ url_for('search_entry') }}" method=post class=add-entry>
+        <dl align="center">
+            <center>
+                <input type=text name=text size=50% value='{{inputquery}}'>
+                <input type=submit value=Search>
+                <p>
+            </center>
+        </dl>
+    </form>
+    {% block body %}{% endblock %}
+</div>

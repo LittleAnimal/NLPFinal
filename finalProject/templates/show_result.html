@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block body %}
+<center class="outputbox">
+    
+    <table class="autowd">
+            <tr>
+                <p><font size="4" color="indigo">New Results:</font>
+                    <font size="4" name="changequery"> {{changequery}} </font>
+                </p>
+            </tr>
+           
+            {%- for word in output %}
+            <tr>
+                <td style="color: seagreen;">Original : </td>
+                <td style="color: seagreen;">
+                    {%- for w in word[1] %}
+                        {{ w }}
+                    {%- endfor %}
+                </td>
+                <td style="color: royalblue;">Suggestion : </td>
+                <td style="color: royalblue;">
+                    {%- for w in word[0] %}
+                        {{ w }}
+                    {%- endfor %}                
+                </td>
+                <td style="color: #C678FF;">Probability: </td>
+                <td style="color: #C678FF;"> {{ word[3] }}</td>
+                
+            </tr>
+            {%- endfor %}
+    </table>
+
+</center>
+{% endblock %}
