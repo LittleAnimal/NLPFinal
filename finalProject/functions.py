@@ -88,7 +88,7 @@ def getwordInfo(text):
 
 #  make prep list
 def getPrep():
-	for line in file('prep.txt'):
+	for line in file('finalProject/prep.txt'):
 		if line[-1] == '\n':
 			prep_list.append(line[:-1])
 		else: 

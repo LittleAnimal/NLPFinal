@@ -11,12 +11,12 @@ TABLE_SCHEMA = ('CREATE TABLE WordLemma('
                     ');')
 
 def get_connection():
-    conn = sqlite3.connect('bnc_word_lemma.db')
+    conn = sqlite3.connect('finalProject/bnc_word_lemma.db')
     conn.text_factory = str
     return conn
 
 def parse_bnc_word_lemma():
-    for line in fileinput.input('bnc.word.lemma.pos.txt'):
+    for line in fileinput.input('finalProject/bnc.word.lemma.pos.txt'):
         lemma, word, tag, count, total, prob = line.split()
         # data parsing
         lemma, word, tag, count, total, prob = lemma[1:-1], word[1:-1], tag[1:-1], float(count), float(total), float(prob)
